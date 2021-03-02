@@ -1,0 +1,48 @@
+package org.zerock.dao;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import lombok.Setter;
+import lombok.extern.log4j.Log4j;
+
+
+
+//log라는 변수를 사용 할 수 있게 하는것 . lombok 설정이 제대로 되어있어야한다.
+@Log4j
+public class JDBCTests {
+
+	static {
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	@Test
+	public void testExist() {
+		log.info("=====자동 di 테스트  ");
+	
+		//null인지 체크  
+		assertNotNull(restaurant);
+		
+		log.info(restaurant);
+		log.info("---------------");
+		log.info(restaurant.getChef());
+		
+		
+	
+	}
+	
+	
+	
+}
