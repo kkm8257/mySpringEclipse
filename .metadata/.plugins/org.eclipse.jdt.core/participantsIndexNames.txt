@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+/Users/kyungminkim/Desktop/mylocal/study/work_space_spring_eclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2485023825.index
+/ex00/src/main/java
+/Users/kyungminkim/Desktop/mylocal/study/work_space_spring_eclipse/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/391439620.index
+/testPro/src/main/java

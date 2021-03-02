@@ -1,0 +1,32 @@
+package org.zerock.sample;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.Setter;
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+public class SampleTest {
+
+	
+	//자동 DI선언 
+	@Setter(onMethod_ = @Autowired)
+	private Restaurant restaurant;
+	
+	//자동 di 테스트  
+	public void testExist() {
+		log.info("=====자동 di 테스트  ");
+	
+		//null인지 체크  
+		assertNotNull(restaurant);
+		
+		log.info(restaurant);
+		
+	
+	}
+	
+	
+	
+}

@@ -1,0 +1,9 @@
+package org.zerock.sample;
+
+
+//자동생성이 되는 어노테이션 선언 -> @Controller(url이 들어오면 어떤 메소드를 실행해라) ,  @service(전체적인 처리부분을 담은 클래스에 사용), @Repository (데이터에 해당)
+//@Component(구성요소) , @RestController(Ajax를쓰기위함)
+
+public class Chef {
+
+}
