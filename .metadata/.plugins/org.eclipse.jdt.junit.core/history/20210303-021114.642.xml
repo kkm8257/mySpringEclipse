@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ex00 (1)" project="ex00" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="org.zerock.sample.SampleTest" time="0.084">
-    <testcase name="testExist" classname="org.zerock.sample.SampleTest" time="0.084"/>
-  </testsuite>
-  <testsuite name="org.zerock.dao.JDBCTests" time="0.183">
-    <testcase name="testExist" classname="org.zerock.dao.JDBCTests" time="0.183"/>
-  </testsuite>
-</testrun>
