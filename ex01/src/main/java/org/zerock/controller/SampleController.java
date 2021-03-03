@@ -95,6 +95,17 @@ public class SampleController {
 	}
 	
 	
+	
+	//요구하는 데이터가 int 인경우 데이터가 넘어오지 않으면 문제가 생긴다
+	//에러페이지 만들어 놨으니까  /sample/age  만 넘기면 문제가 발생해서 에러페이지로  간다 
+	@GetMapping("/age")
+	public void getName(int age) {
+		log.info(age);
+	}
+	
+	
+	
+	
 	///------------넘어오는 파라미터 데이터수집하기 
 	
 	@GetMapping("/name")
@@ -181,7 +192,6 @@ public class SampleController {
 		//저장위
 		String path = "/Users/kyungminkim/Desktop/mylocal/study/upload/";
 		//중복을 피하기 위한 숫자 -> 파일명 앞에 붙이는 것으로 함 (여기서는 ㅇㅇ) 
-		int cnt= 0 ;
 		
 		
 		files.forEach(file->{
@@ -197,16 +207,13 @@ public class SampleController {
 			log.info("원래 파일 명 : " + fileName +" // 파일 사이즈 : "+size);
 			
 			
-			//파일 저장하는 처리  file객체를 transferTo 메소드를 통해 사용  , (++cnt)는 이름앞에 붙이는숫자 
+			//파일 저장하는 처리  file객체를 transferTo 메소드를 통해 사용  , 여기서는 중복처리를 안했음  fileName이 String이니까 알맞게 코딩 필요 
 			try {
-				cnt++;
-				file.transferTo(new File(path,cnt+fileName));
-				
+				file.transferTo(new File(path,fileName));
 			} catch (IllegalStateException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 			
 			//첨부된 파일의 정보를 jsp로 보내기위해 Model로 담는다.
 			
@@ -215,6 +222,15 @@ public class SampleController {
 		});
 		
 		return "upload";
+		
+		
+		
+		
+		//만약에 프로젝트 파일안에  저장소를 두어서  서버에서 접근이 가능토록하려
+		///Users/kyungminkim/Desktop/mylocal/study/work_space_spring_eclipse/.metadata/.plugins/org.eclipse.wst.server.core/tmp1/webapps  경로에 폴더를만들
+		//사용하라   realpath로 잡아주면 된다
+		
+		//tmp는탐켓서버를 말함   뒤에숫자는 생성 순서 webapp에 폴더를 만들고 사용하는 것이 중요 함  . 이렇게하면 서버쪽에서 직접 접근이 가능함 
 		
 	}
 	

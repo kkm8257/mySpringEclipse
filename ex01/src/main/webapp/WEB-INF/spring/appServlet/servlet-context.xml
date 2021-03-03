@@ -39,6 +39,8 @@
 		</beans:bean>
 	
 		<context:component-scan base-package="org.zerock.controller" />
+		<context:component-scan base-package="org.zerock.exception" />
+
 			<!--  경로를 컨트롤러 밑으로 해놨으니까, 이 컨트롤러 패키지밑에있는 자바 파일들을  , 프로젝트가 실행되면서
 			모두 검사를 함 ,  검사해서 @Controller 라던가 @Component @Services @Repository 등을 
 			자동을 생성 해주겠다는 이야기. -->		
