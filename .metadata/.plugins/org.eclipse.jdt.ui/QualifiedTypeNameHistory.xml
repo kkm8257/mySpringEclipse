@@ -36,4 +36,7 @@
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
+    <fullyQualifiedTypeName name="org.zerock.board.mapper.BoardMapper"/>
+    <fullyQualifiedTypeName name="org.zerock.board.service.BoardService"/>
+    <fullyQualifiedTypeName name="org.zerock.board.vo.BoardVO"/>
 </qualifiedTypeNameHistroy>

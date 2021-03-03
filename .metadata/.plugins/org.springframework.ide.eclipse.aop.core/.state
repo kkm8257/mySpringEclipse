@@ -2,5 +2,4 @@
 <aop-reference-model>
 <aop-project name="ex00"/>
 <aop-project name="ex01"/>
-<aop-project name="springFastProject"/>
 </aop-reference-model>
