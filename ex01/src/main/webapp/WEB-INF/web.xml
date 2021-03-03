@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_1.xsd">
+	
+	<!--web-app version을 3.1 로 해주어야한다.  우리가 pom.xml에서 3.1로 해놧음 
+	
+	Location 도 web-app_3_1 로 버전 맞추어서 수정해주엇음   -->
+	
+	<!--web.xml로 부터 웹이 시작된다. -->
+	
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	
+	
+	<!--appServlet  은 스프링 프레임워크 밑에 web 밑에 서블릿 밑에 디스패처서블릿을 쓰겠다.
+			디스패처 서블릿은 모든 url을 가지고 간다. 맨 앞단에서 모든 url의 명령어를 받는다.
+			그리고 @어노테이션들을 참조한다. 
+			 -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup> <!-- 서버가 시작되면 바로 로딩시켜주세요 라는 의미  -->
+	</servlet>
+		
+	<servlet-mapping>
+		<!--  url 밑에 모든 url을 사용 ,  여기서 /니가  슬래싀 밑에 모든것 .  .do만 쓰고 싶으면 *.do 이런식으로 작성 가능  -->
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+</web-app>
