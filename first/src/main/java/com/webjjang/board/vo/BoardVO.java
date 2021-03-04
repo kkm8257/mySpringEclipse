@@ -8,6 +8,8 @@ public class BoardVO {
 	private String title, content, writer;
 	private Date writeDate;
 	private int hit;
+	
+	
 	public int getNo() {
 		return no;
 	}

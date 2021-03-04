@@ -20,5 +20,8 @@ public interface BoardMapper {
 	//전체 데이터 가져오기
 	public Integer getCount();
 	
+	public List<String> myList();
+	
+	public List<BoardVO> myList_get();
 
 }

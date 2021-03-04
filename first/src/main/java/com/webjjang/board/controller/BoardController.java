@@ -24,8 +24,15 @@ public class BoardController {
 		
 		//model안에는 request가 있따.
 		//model에 데이터를 저장하면 request에 저장이 된다.
+		System.out.println(service);
 		
-		System.out.println("board Controller.list().pageObject->"+pageObject);
+		System.out.println(">>"+service.myList());
+		
+		System.out.println("::>>>>"+service.myList_get());
+		
+		
+		System.out.println(service.list(pageObject));
+		
 		model.addAttribute("list",service.list(pageObject));
 		
 		return "board/list";

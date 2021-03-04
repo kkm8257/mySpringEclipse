@@ -20,10 +20,27 @@ public class BoardService {
 	
 	public List<BoardVO> list(PageObject pageObject){
 		
-		mapper.getCount();
+		
+		pageObject.setTotalRow(mapper.getCount());
+		System.out.println("board Controller.list().pageObject->"+pageObject);
+
 		
 		return mapper.list(pageObject);
 	}
+	
+	public List<String> myList(){
+		System.out.println("mylist");
+		
+		return mapper.myList();
+	}
+	
+	public List<BoardVO> myList_get(){
+		
+		
+		return mapper.myList_get();
+	}
+	
+	
 	
 	
 	
