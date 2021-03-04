@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--폴더는 도메인 작성 (패키지)와 동일한 경로로맞춰 줄것 -->
+
+<mapper namespace="com.webjjang.board.mapper.BoardMapper">
+
+
+
+	<select id="list" resultType="com.webjjang.board.vo.BoardVO">
+		select * from(
+		select rownum rnum, no, title, writer, writeDate, hit
+		from(
+		<!-- 맨 처음 데이터를 가져올 때 검색을 해서 가져온다. -->
+		select no, title, writer, writeDate, hit
+		from board
+		order by no desc
+			)
+		)
+		where rnum between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="getCount" resultType="Integer">
+		select count(*) from board
+	</select>
+
+</mapper>
+
