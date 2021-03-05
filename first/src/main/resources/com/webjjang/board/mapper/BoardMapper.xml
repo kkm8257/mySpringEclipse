@@ -27,6 +27,8 @@
 	</select>
 	
 	
+	<!-- 테스트 메소드  -->
+	
 	<select id="myList" resultType="String">
 		SELECT * FROM tab
 
@@ -36,6 +38,13 @@
 	<select id="myList_get" resultType="com.webjjang.board.vo.BoardVO">
 		SELECT * FROM board
 
+	</select>
+	
+	<!-- 테스트 메소드  -->
+	
+	
+	<select id="view" resultType="com.webjjang.board.vo.BoardVO">
+		select no,title,content,writer,writeDate,hit from board where no=#{no}
 	</select>
 	
 

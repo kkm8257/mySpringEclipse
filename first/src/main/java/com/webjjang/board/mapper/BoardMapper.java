@@ -20,8 +20,16 @@ public interface BoardMapper {
 	//전체 데이터 가져오기
 	public Integer getCount();
 	
+	
+	//테스트용 메서드 
 	public List<String> myList();
 	
 	public List<BoardVO> myList_get();
+	//
+	
+	
+	
+	//게시판 글보기 
+	public Object view(int no);
 
 }

@@ -10,6 +10,8 @@ import com.webjjang.board.service.BoardService;
 
 import net.webjjang.util.PageObject;
 
+//컨트롤러에서 서비스를 이용해서 model에 담고  , 이동할 view를 return 
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
@@ -24,19 +26,22 @@ public class BoardController {
 		
 		//model안에는 request가 있따.
 		//model에 데이터를 저장하면 request에 저장이 된다.
-		System.out.println(service);
-		
-		System.out.println(">>"+service.myList());
-		
-		System.out.println("::>>>>"+service.myList_get());
-		
-		
-		System.out.println(service.list(pageObject));
-		
 		model.addAttribute("list",service.list(pageObject));
 		
 		return "board/list";
 	}
+	
+	@GetMapping("/view.do")
+	public String view(int no,Model model) {
+		
+		model.addAttribute("vo",service.view(no));
+		
+		return "board/view";
+		
+	}
+	
+	
+	
 	
 	
 }

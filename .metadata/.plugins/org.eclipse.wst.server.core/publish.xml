@@ -4,5 +4,6 @@
   <server id="Tomcat v9.0 Server at fastProject" path="publish3.dat"/>
   <server id="Tomcat v9.0 Server at first" path="publish3.dat"/>
   <server id="Tomcat v9.0 Server at ex01" path="publish1.dat"/>
+  <server id="Tomcat v9.0 Server at fastProcjet" path="publish4.dat"/>
   <server id="Tomcat v9.0 Server at myTestBoard" path="publish2.dat"/>
 </publish-info>
